@@ -11,11 +11,6 @@ import ctk
 import csv
 import ast
 
-# with slicer.util.displayPythonShell():
-#   slicer.util.pip_install('pandas')
-
-import pandas as pd
-
 import slicer
 from slicer.i18n import tr as _
 from slicer.i18n import translate
@@ -23,10 +18,16 @@ from slicer.ScriptedLoadableModule import *
 from slicer.util import VTKObservationMixin
 from slicer.parameterNodeWrapper import (
     parameterNodeWrapper,
-    WithinRange,
-)
-
+    WithinRange,)
 from slicer import vtkMRMLScalarVolumeNode
+
+try:
+    import pandas as pd
+except ImportError:
+    slicer.util.infoDisplay("Installing pandas. Please wait...")
+    with slicer.util.displayPythonShell():
+        slicer.util.pip_install('pandas')
+    import pandas as pd
 
 
 #
