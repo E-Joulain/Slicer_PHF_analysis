@@ -160,7 +160,7 @@ class PHF_analysisWidget(ScriptedLoadableModuleWidget, VTKObservationMixin):
         self.layout.addWidget(self.inputVolumeSelector)
         self.inputVolumeSelector.setStyleSheet("""
                     QComboBox {
-                        background-color: #F44336;
+                        background-color: #E8B952;
                         color: #00363A;
                         font-weight: bold;
                         border: 1px solid #00796B;
@@ -210,7 +210,7 @@ class PHF_analysisWidget(ScriptedLoadableModuleWidget, VTKObservationMixin):
         self.preopGroup.text = "Analysis of the Pre-op image"
         self.layout.addWidget(self.preopGroup)
         self.preopLayout = qt.QVBoxLayout(self.preopGroup)
-        self.preopGroup.setStyleSheet("background-color: #4CAF50; color: white;")
+        self.preopGroup.setStyleSheet("background-color: #50B550; color: white;")
 
         self.preopPlaceButton = qt.QPushButton("Place Fiducials (Preop)")
         self.preopPlaceButton.connect('clicked(bool)', lambda: self.onPlaceFiducial("preop"))
@@ -235,7 +235,7 @@ class PHF_analysisWidget(ScriptedLoadableModuleWidget, VTKObservationMixin):
         self.postopGroup.text = "Analysis of the Post-op image"
         self.layout.addWidget(self.postopGroup)
         self.postopLayout = qt.QVBoxLayout(self.postopGroup)
-        self.postopGroup.setStyleSheet("background-color: #2196F3; color: white;")
+        self.postopGroup.setStyleSheet("background-color: #1769AA; color: white;")
 
         self.postopPlaceButton = qt.QPushButton("Place Fiducials (Postop)")
         self.postopPlaceButton.connect('clicked(bool)', lambda: self.onPlaceFiducial("postop"))
@@ -269,6 +269,7 @@ class PHF_analysisWidget(ScriptedLoadableModuleWidget, VTKObservationMixin):
         self.vir_analysisComputeButton = qt.QPushButton("Compute virtual humerus reconstruction")
         self.vir_analysisComputeButton.connect('clicked(bool)', lambda: self.onComputeVirtualHumerus("preop"))
         self.layout.addWidget(self.vir_analysisComputeButton)
+        self.vir_analysisComputeButton.setStyleSheet("background-color: #E8B952; color: black;")
 
     """Fonctions definitions"""
 
